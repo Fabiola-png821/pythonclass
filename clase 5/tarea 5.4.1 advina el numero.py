@@ -1,5 +1,5 @@
 #Clase:        Clase 5
-#Tema:         Manejo de lista
+#Tema:         Bucles for y while
 #Ejercicio:    5.4.1  Adivina el numero
 #Descripción:  Genera un numero aleatorio entre 1 y 100 y pide al usuario que lo adivine 
 #Autor:        Fabiola Guardado
