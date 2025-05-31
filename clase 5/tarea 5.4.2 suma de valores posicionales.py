@@ -1,5 +1,5 @@
 #Clase:        Clase 5
-#Tema:         Manejo de lista
+#Tema:         Bucles for y while 
 #Ejercicio:    5.4.2  Suma de valores posicionales 
 #Descripción:  Pide al usuario un solo numero u suma sus valores hasta que quede ese numero
 #Autor:        Fabiola Guardado
