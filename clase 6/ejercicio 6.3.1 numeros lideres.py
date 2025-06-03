@@ -11,12 +11,10 @@ lista1 = [int(num) for num in lista]
 lideres = []
 
 for i in range(len(lista)):
-    numerolider = True
     for j in range(i + 1, len(lista)):
         if lista[i] <= lista[j]:
-            numerolider = False
             break
-    if numerolider:
+    else:
         lideres.append(lista[i])
 
 print("Números líderes:", lideres)
