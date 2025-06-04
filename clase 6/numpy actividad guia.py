@@ -84,7 +84,7 @@ consumototalhogar= np.sum(consumo, axis=1)
 #Indice del hogar con mayor consumo 
 hogarmayorconsumo= np.argmax(consumototalhogar)
 #Indice del hogar con mejor consumo
-hogarmaseficiente= np.argmi(consumototalhogar)
+hogarmaseficiente= np.argmin(consumototalhogar)
 
 print(consumototalhogar)
 print(hogarmayorconsumo)
@@ -104,4 +104,33 @@ consumonormalizado=(consumo - consumo.min()) / (consumo.max() -consumo.min())
 #Resultado 
 print(consumonormalizado)
 
+#1. ¿Cual es el consumo del hogar 5 el dia viernes?
+consumoviernes= consumo[4][4]
+print(f"consumo del hogar 5 el viernes: {consumoviernes}")
 
+#2. Usando indexación, muestra el consumo de los últimos 3 hogares el domingo.
+consumoultimoshogaresdomingo= consumo[-3:,6]
+print(f"consumo de los ultimos 3 hogares el domingo: {consumoultimoshogaresdomingo}")
+
+#3. Calcula el promedio de consumo los fines de semana (sábado y domingo, columnas 5 y 6).
+finessemana = consumo[:, [5, 6]]
+promedio_finde = np.mean(finessemana)
+print(f"Promedio de consumo durante el fin de semana: {promedio_finde}")
+
+#4. ¿Qué día de la semana tiene la mayor desviación estándar entre hogares? Explica qué indica esto.
+desviacionpordia = np.std(consumo, axis=0)
+dia_mayor_desv = np.argmax(desviacionpordia)
+print(f"Desviación estándar por día: {desviacionpordia}")
+print(f"El día con mayor desviación estándar es: {dia_mayor_desv}")
+#Una mayor desviacion estándar indica que hay una mayor variabilidad de consumo en los hogares ese dia. 
+
+#5. Identifica los 3 hogares con menor consumo total durante la semana. Muestra sus índices y valores.
+indicesmenorconsumo = np.argsort(consumototalhogar)[:3]
+valores_menor_consumo = consumototalhogar[indicesmenorconsumo]
+print(f"Índices de los 3 hogares con menor consumo: {indicesmenorconsumo}")
+print(f"Valores de consumo de esos hogares: {valores_menor_consumo}")
+
+#6. Si el hogar 3 aumenta su consumo en un 10% cada día, ¿cuál sería su nuevo consumo total semanal?
+hogar3 = consumo[2]
+hogar3nuevoconsumo = hogar3 * 1.1
+print(f"Nuevo consumo total semanal del hogar 3 con aumento del 10%: {hogar3}")
